@@ -33,13 +33,13 @@ issues with login in windows? check this out [DockerToolbox in windows Login/pus
 
 #### save current docker
 
-0- login to docker hub
-1- To get current container names do `docker ps`
-2- commit container
+1. login to docker hub
+2. To get current container names do `docker ps`
+3. commit container
 ~~~
 docker commit udacity user/repository
 ~~~
-3- push the container
+4. push the container
 ~~~
 docker push index.docker.io/username/repository
 ~~~
