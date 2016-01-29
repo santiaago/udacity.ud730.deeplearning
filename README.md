@@ -5,6 +5,12 @@ deep learning course by udacity
 Over this readme the name of the image will be `udacity`.
 You can name containers by using the `--name`
 
+* [run-assignments](#run-assignments)
+* [find virtual machines ip](#find-virtual-machines-ip)
+* [how to login into docker hub](#how-to-login-into-docker-hub)
+* [save current docker](#save-current-docker)
+* [access docker container through a terminal](#access-docker-container-through-a-terminal)
+
 #### run assignments:
 ~~~
 docker run --name udacity -p 8888:8888 -it --rm b.gcr.io/tensorflow-udacity/assignments
