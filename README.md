@@ -89,7 +89,17 @@ example:
 docker run --name udacity --memory 4096m -p 8888:8888 -v /c/Users/username/yourpathto/assignments/:/notebooks -it --rm b.gcr.io/tensorflow-udacity/assignments
 ~~~
 
+#### check your memory:
 
+To check that the change of memory took place run the following script in a the python notebook.
+
+~~~
+import os
+mem_bytes = os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES')  # e.g. 4015976448
+mem_gib = mem_bytes/(1024.**3)  # e.g. 3.74
+~~~
+
+If the memory is not what you expect you might need to turn down your containers, open virtual box and change the ram settings there before running the `docker run` cmd again.
 
 
 
