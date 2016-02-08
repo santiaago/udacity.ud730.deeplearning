@@ -61,7 +61,33 @@ docker run --name udacity -p 8888:8888 -v /c/Users/username/yourpathto/assignmen
 
 > If you are using Docker Machine on Mac or Windows, your Docker daemon has only limited access to your OS X or Windows filesystem. Docker Machine tries to auto-share your /Users (OS X) or C:\Users (Windows) directory.
 
+#### memory errors
 
+you might be getting memory errors like the following:
+
+~~~~
+---------------------------------------------------------------------------
+MemoryError                               Traceback (most recent call last)
+<ipython-input-8-5158e101f707> in <module>()
+     37   print('Labels:', labels.shape)
+     38   return dataset, labels
+---> 39 train_dataset, train_labels = load(train_folders, 450000, 550000)
+     40 test_dataset, test_labels = load(test_folders, 18000, 20000)
+
+<ipython-input-8-5158e101f707> in load(data_folders, min_num_images, max_num_images)
+     34   print('Full dataset tensor:', dataset.shape)
+     35   print('Mean:', np.mean(dataset))
+---> 36   print('Standard deviation:', np.std(dataset))
+     37   print('Labels:', labels.shape)
+~~~~
+
+Try changing the RAM you provide to your docker container.
+To do this use the `-m` or `--memory`
+
+example:
+~~~
+docker run --name udacity --memory 4096m -p 8888:8888 -v /c/Users/username/yourpathto/assignments/:/notebooks -it --rm b.gcr.io/tensorflow-udacity/assignments
+~~~
 
 
 
