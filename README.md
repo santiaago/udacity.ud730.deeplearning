@@ -10,6 +10,7 @@ You can name containers by using the `--name`
 * [how to login into docker hub](#how-to-login-into-docker-hub)
 * [save current docker](#save-current-docker)
 * [access docker container through a terminal](#access-docker-container-through-a-terminal)
+* [show images in ipython notebook](#show-images-in-ipython-notebook)
 
 #### run assignments:
 ~~~
@@ -101,5 +102,14 @@ mem_gib = mem_bytes/(1024.**3)  # e.g. 3.74
 
 If the memory is not what you expect you might need to turn down your containers, open virtual box and change the ram settings there before running the `docker run` cmd again.
 
+#### show images in ipython notebook
 
+you need to add `%matplotlib inline` to be able to show images in your ipython notebook.
+
+~~~
+# you need a matplotlib inline to be able to show images in python notebook
+%matplotlib inline
+plt.imshow(train_dataset[0])
+plt.title("Char " + str(train_labels[0]))
+~~~
 
